@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
     const timestamp = new Date()
     var data = {
-        timestamp: timestamp.toString()
+        timestamp: timestamp.toString(),
     }
     req.data = data
     next()

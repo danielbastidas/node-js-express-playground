@@ -14,7 +14,10 @@ app.engine('mustache', hoganMiddleware.__express);
 app.use(express.static(path.join(__dirname, 'public')));
 
 /** this is an example of how to configure a middleware or interceptoor to add data
- * on each request
+ * on each request.
+ * Because the middleware/interceptor is defined before the definition of the router
+ * the middleware will be available for the router. In case this definition happens after
+ * the definition of the router, it will not apply to the routes
  */
 app.use((req, res, next) => {
     const timestamp = new Date()
@@ -28,7 +31,10 @@ app.use((req, res, next) => {
 /* The routes supported by the server are contained in the 
 index.js file inside the routes folder */
 const router = require('./routes/index.js');
+const databaseRoutes = require('./routes/database.js');
+
 app.use('/', router);
+app.use('/database', databaseRoutes);
 
 app.listen(8080);
 console.log('Server running on http://localhost:8080');

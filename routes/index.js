@@ -23,15 +23,15 @@ router.get('/json', (req, res, next) => {
 
 /* This route will show how to extract parameters from the url path.
 Also called request parameters */
-router.get('/:param1/:param2', (req, res, next) => {
-    const param1 = req.params.param1
-    const param2 = req.params.param2
-    const data = {
-        parameter1: param1,
-        parameter2: param2
-    };
-    res.json(data);
-});
+// router.get('/:param1/:param2', (req, res, next) => {
+//     const param1 = req.params.param1
+//     const param2 = req.params.param2
+//     const data = {
+//         parameter1: param1,
+//         parameter2: param2
+//     };
+//     res.json(data);
+// });
 
 /* This route will show how to extract query parameters from the url */
 router.get('/url-query-params', (req, res, next) => {

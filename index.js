@@ -31,8 +31,9 @@ app.use((req, res, next) => {
 /* The routes supported by the server are contained in the 
 index.js file inside the routes folder */
 const router = require('./routes/index.js');
+const databaseRoutes = require('./routes/crud.js');
+
 // object desctructuring is like a static method invocation
-const databaseRoutes = require('./routes/database.js');
 const { connectDatabase } = require('./database/db.js')
 
 connectDatabase()

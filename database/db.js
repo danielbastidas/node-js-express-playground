@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectDatabase = () => mongoose.connect('mongodb://localhost/persons_db', { useNewUrlParser: true })
+const connectDatabase = () => mongoose.connect(process.env.DB_URL, { useNewUrlParser: true })
 
 const db = mongoose.connection
 

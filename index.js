@@ -60,7 +60,8 @@ app.use('/database', databaseRoutes);
 /** Look this route has a custom middleware implemented */
 app.use('/custom', customMiddleware, customRoutes)
 
-app.listen(process.env.PORT || 8080);
-console.log('Server running on http://localhost:8080');
+const port = process.env.PORT || 8080
+app.listen(port);
+console.log(`Server running on http://localhost:${port}`);
 
 //TODO: use express validator
